@@ -11,7 +11,7 @@ MODEL = "gemini-2.5-pro"
 
 
 job_posting_coordinator_agent = LlmAgent(
-    name="job-posting-coordinator",
+    name="job_posting_coordinator",
     model=MODEL,
     description=(
         "Analyze the job posting URL provided "
@@ -22,7 +22,7 @@ job_posting_coordinator_agent = LlmAgent(
     instruction=prompt.JOB_POSTING_COORDINATOR_PROMPT,
     output_key="job-ad",
     tools=[
-        AgentTool(agent=job_ad_research_agent),
+        AgentTool(agent=job_ad_websearch_agent),
     ],
 )
 
