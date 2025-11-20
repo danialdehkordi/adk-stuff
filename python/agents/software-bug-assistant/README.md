@@ -1,5 +1,8 @@
 # Software Bug Assistant - ADK Python Sample Agent
 
+[![YouTube](https://img.shields.io/badge/Watch-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/5ZmaWY7UX6k?si=ZbtTScrOls6vp7CH)
+[![Google Cloud](https://img.shields.io/badge/Read_Blog-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)](https://cloud.google.com/blog/topics/developers-practitioners/tools-make-an-agent-from-zero-to-assistant-with-adk?e=48754805?utm_source%3Dtwitter?utm_source%3Dlinkedin)
+
 ## Overview
 
 The Software Bug Assistant is a sample agent designed to help IT Support and Software Developers triage, manage, and resolve software issues. This sample agent uses ADK Python, a PostgreSQL bug ticket database (internal tickets), GitHub MCP server (external tickets), RAG, Google Search, and StackOverflow to assist in debugging. 
@@ -612,7 +615,33 @@ Test the agent by asking questions like:
 ![](deployment/images/cloud-run-example.png)
 
 
-### Clean up 
+## Alternative: Using Agent Starter Pack
+
+You can also use the [Agent Starter Pack](https://goo.gle/agent-starter-pack) to create a production-ready version of this agent with additional deployment options:
+
+```bash
+# Create and activate a virtual environment
+python -m venv .venv && source .venv/bin/activate # On Windows: .venv\Scripts\activate
+
+# Install the starter pack and create your project
+pip install --upgrade agent-starter-pack
+agent-starter-pack create my-software-bug-assistant -a adk@software-bug-assistant
+```
+
+<details>
+<summary>⚡️ Alternative: Using uv</summary>
+
+If you have [`uv`](https://github.com/astral-sh/uv) installed, you can create and set up your project with a single command:
+```bash
+uvx agent-starter-pack create my-software-bug-assistant -a adk@software-bug-assistant
+```
+This command handles creating the project without needing to pre-install the package into a virtual environment.
+
+</details>
+
+The starter pack will prompt you to select deployment options and provides additional production-ready features including automated CI/CD deployment scripts.
+
+### Clean up
 
 You can clean up this agent sample by: 
 - Deleting the [Artifact Registry](https://console.cloud.google.com/artifacts). 
